@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Form</title>
+</head>
+<body>
+    <h1>Customer Churn Prediction</h1>
+    <form action="/churn" method="post">
+        <label for="SeniorCitizen">Senior Citizen:</label>
+        <input type="number" name="SeniorCitizen" required><br>
+
+        <label for="MonthlyCharges">Monthly Charges:</label>
+        <input type="number" step="0.01" name="MonthlyCharges" required><br>
+
+        <label for="TotalCharges">Total Charges:</label>
+        <input type="number" step="0.01" name="TotalCharges" required><br>
+
+        <label for="gender">Gender:</label>
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <label for="Partner">Partner:</label>
+        <select name="Partner">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="Dependents">Dependents:</label>
+        <select name="Dependents">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="PhoneService">Phone Service:</label>
+        <select name="PhoneService">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="MultipleLines">Multiple Lines:</label>
+        <select name="MultipleLines">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No phone service">No phone service</option>
+        </select><br>
+
+        <label for="InternetService">Internet Service:</label>
+        <select name="InternetService">
+            <option value="DSL">DSL</option>
+            <option value="Fiber optic">Fiber optic</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="OnlineSecurity">Online Security:</label>
+        <select name="OnlineSecurity">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>
+        </select><br>
+
+        <label for="OnlineBackup">Online Backup:</label>
+        <select name="OnlineBackup">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>
+        </select><br>
+
+        <label for="DeviceProtection">Device Protection:</label>
+        <select name="DeviceProtection">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>
+        </select><br>
+
+        <label for="TechSupport">Tech Support:</label>
+        <select name="TechSupport">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>
+        </select><br>
+
+        <label for="StreamingTV">Streaming TV:</label>
+        <select name="StreamingTV">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>
+        </select><br>
+
+        <label for="StreamingMovies">Streaming Movies:</label>
+        <select name="StreamingMovies">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No internet service">No internet service</option>
+        </select><br>
+
+        <label for="Contract">Contract:</label>
+        <select name="Contract">
+            <option value="Month-to-month">Month-to-month</option>
+            <option value="One year">One year</option>
+            <option value="Two year">Two year</option>
+        </select><br>
+
+        <label for="PaperlessBilling">Paperless Billing:</label>
+        <select name="PaperlessBilling">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br>
+
+        <label for="PaymentMethod">Payment Method:</label>
+        <select name="PaymentMethod">
+            <option value="Electronic check">Electronic check</option>
+            <option value="Mailed check">Mailed check</option>
+            <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+            <option value="Credit card (automatic)">Credit card (automatic)</option>
+        </select><br>
+
+        <label for="tenure">Tenure (months):</label>
+        <input type="number" name="tenure" required><br><br>
+
+        <input type="submit" value="Predict Churn">
+    </form>
+
+    <h2>Upload CSV for Bulk Prediction</h2>
+    <form action="/predict_csv" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload and Predict</button>
+    </form>
+</body>
+</html>
